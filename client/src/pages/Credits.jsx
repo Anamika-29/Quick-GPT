@@ -12,7 +12,7 @@ const Credits = () => {
 
     const fetchPlans = async () => {
         try {
-            const { data } = await axios.get(`${process.env.VITE_BACKEND_URL}/api/credit/plan`, {
+            const { data } = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/credit/plan`, {
                 headers: {Authorization: token}
             })
             if(data.success){
@@ -28,7 +28,7 @@ const Credits = () => {
 
     const purchasePlan = async (planId) => {
         try {
-            const { data } = await axios.post(`${process.env.VITE_BACKEND_URL}/api/credit/purchase`, {planId}, {
+            const { data } = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/credit/purchase`, {planId}, {
                 headers: {Authorization: token }
             })
             if(data.success){

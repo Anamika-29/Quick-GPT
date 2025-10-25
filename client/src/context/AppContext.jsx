@@ -21,7 +21,7 @@ export const AppContextProvider = ({ children }) => {
 
     const fetchUser = async () => {
         try {
-            const { data } = await axios.get(`${process.env.VITE_BACKEND_URL}/api/user/data`, {headers: {Authorization: token}})
+            const { data } = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/user/data`, {headers: {Authorization: token}})
             if(data.success){
                 setUser(data.user)
             }else{
@@ -38,7 +38,7 @@ export const AppContextProvider = ({ children }) => {
         try {
             if(!user) return toast('Login to create a new chat')
                 navigate('/')
-            await axios.get(`${process.env.VITE_BACKEND_URL}/api/chat/create`, {headers: {Authorization: token}})
+            await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/chat/create`, {headers: {Authorization: token}})
             await fetchUsersChats()
         } catch (error) {
             toast.error(error.message)
@@ -47,7 +47,7 @@ export const AppContextProvider = ({ children }) => {
 
     const fetchUsersChats = async () => {
         try {
-            const {data} = await axios.get(`${process.env.VITE_BACKEND_URL}/api/chat/get`, {headers: {Authorization: token}})
+            const {data} = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/chat/get`, {headers: {Authorization: token}})
             if(data.success){
                 setChats(data.chats)
                 //If user has no chats create one
