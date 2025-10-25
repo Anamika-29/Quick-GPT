@@ -20,7 +20,7 @@ const Sidebar = ({ isMenuOpen, setIsMenuOpen }) => {
       e.stopPropagation()
       const confirm = window.confirm('Are you sure you want to delete this chat?')
       if(!confirm) return
-      const { data } = await axios.post('http://localhost:3000/api/chat/delete', {chatId}, {headers: { Authorization: token }})
+      const { data } = await axios.post(`${process.env.VITE_BACKEND_URL}/api/chat/delete`, {chatId}, {headers: { Authorization: token }})
       if(data.success){
         setChats(prev => prev.filter(chat => chat._id !== chatId))
         await fetchUsersChats()

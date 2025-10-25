@@ -12,7 +12,7 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const url = state === "login" ? 'http://localhost:3000/api/user/login' : 'http://localhost:3000/api/user/register'
+        const url = state === "login" ? `${process.env.VITE_BACKEND_URL}/api/user/login` : `${process.env.VITE_BACKEND_URL}/api/user/register`
 
 
         try {

@@ -12,7 +12,7 @@ const Community = () => {
 
     const fetchImages = async () => {
         try {
-            const {data} = await axios.get('http://localhost:3000/api/user/published-images')
+            const {data} = await axios.get(`${process.env.VITE_BACKEND_URL}/api/user/published-images`)
             if(data.success){
                 setImages(data.images)
             }else{
