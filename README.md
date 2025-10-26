@@ -1,3 +1,5 @@
+## 🌟 Demo
+[Visit Quick GPT](https://quick-gpt-dpks.vercel.app/)
 ## 🌟 Overview
 
 Welcome to QuickGPT, a full-stack MERN AI Chat application that brings you advanced conversation capabilities through Google Gemini AI. Enjoy seamless image generation with ImageKit, make secure transactions with Stripe, and manage your credits effortlessly. QuickGPT is deployed on Vercel, ensuring you have smooth and fast performance.
